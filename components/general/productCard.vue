@@ -1,20 +1,32 @@
 <template>
 <v-card elevation="7" class="product-card">
-    <img :src="image" alt="paris" class="product-card-image">
+    <img :src="image" alt="paris" class="product-card-image" >
     <v-card-title>  {{ title }}  </v-card-title>
 
     <v-card-subtitle>  {{ subtitle }}  </v-card-subtitle>
 
     <div class="product-card-more">
-        <v-btn @click="navigattopage">
+        <v-btn @click="navigateToPage">
             see more
         </v-btn>
         <span>
             {{ price }} $
         </span>
+        <div class="text-center">
+    <v-rating
+      
+      bg-color="orange-lighten-1"
+      color="red"
+    ></v-rating>
+  </div>
     </div>
+
+
     
 </v-card>
+
+
+
         
     
 </template>
@@ -40,11 +52,13 @@ props:{
         type: Number,
         default:0
     },
-    methods:{
-                navigateToPage(){
-                    navigateToPage
-                },
 },
-        }
-}
+
+methods:{
+    navigateToPage(){
+        this.$router.push(`/products-overview/${this.title}`)
+    },
+
+  }        }
+
 </script>

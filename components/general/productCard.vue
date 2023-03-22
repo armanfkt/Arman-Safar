@@ -6,20 +6,27 @@
     <v-card-subtitle>  {{ subtitle }}  </v-card-subtitle>
 
     <div class="product-card-more">
+        
         <v-btn @click="navigateToPage">
             see more
         </v-btn>
         <span>
             {{ price }} $
         </span>
-        <div class="text-center">
-    <v-rating
-      
-      bg-color="orange-lighten-1"
-      color="red"
-    ></v-rating>
-  </div>
     </div>
+    
+    <div class="text-center" >
+<v-rating
+  
+  bg-color="orange-lighten-1"
+  color="red"
+></v-rating>
+</div>
+<div class="product-card-more">
+    <v-btn @click="navigatetoticket">
+        Book a Ticket
+    </v-btn>
+</div>
 
 
     
@@ -58,6 +65,10 @@ methods:{
     navigateToPage(){
         this.$router.push(`/products-overview/${this.title}`)
     },
+    navigatetoticket(){
+        this.$router.push(`/ticket/`)
+        
+    }   
 
   }        }
 

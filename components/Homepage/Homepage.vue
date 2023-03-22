@@ -1,16 +1,18 @@
 <template>
     <v-row>
-        <v-col v-for ="tour in tours" :key="tour.title" cols="12" sm="3" md="6" xs="12">
+        <v-col v-for ="tour in tours" :key="tour.title" cols="12" sm="6" md="3" xs="12">
             <product-card :image="tour.image" :title="tour.title"  :subtitle="tour.subtitle" :price="tour.price" />
             
         </v-col>
-        <v-col>
-            <v-autocomplete
+        <v-col  cols="12" sm="3">
+            <v-autocomplete 
   clearable
   label="Select your city"
-  :items="['Berlin', 'Rome', 'Barcelon', 'Paris', 'London', 'Milan', 'Bayern', 'Denver']"
+  :items="['Berlin', 'Rome', 'Barcelon', 'Paris', 'London', 'Milan', 'Munich', 'Denver']"
 ></v-autocomplete>
         </v-col>
+        
+
     </v-row>
 
  
@@ -40,40 +42,40 @@ export default{
                     price:850,
                 },
                 {
-                    image: "/cities/paris.jpg",
+                    image: "/cities/Berlin.jpg",
                     title: "Berlin Tour",
                     subtitle:" Have a Good days in berlin with our tour!",
                     price:456,
                 },
                 {
-                    image: "/cities/paris.jpg",
+                    image: "/cities/milan.jpg",
                     title: "Milan Tour",
                     subtitle:" The Best trip to themilan cradle of civilization and art!",
                     price:590,
                 },
                 {
-                    image: "/cities/paris.jpg",
+                    image: "/cities/barcalon.jpg",
                     title: "Barcelon Tour",
                     subtitle:" Dream Times in Barcelona with our tour!",
                     price:900,
                 },
                 {
-                    image: "/cities/paris.jpg",
+                    image: "/cities/london.jpg",
                     title: "London Tour",
                     subtitle:" Best Days ever in london with the best tour of Europe!",
                     price:1200,
                 },
                 {
-                    image: "/cities/paris.jpg",
-                    title: "bayern Tour",
+                    image: "/cities/munich.jpg",
+                    title: "munich Tour",
                     subtitle:" A wonderful excursion in the soccer city of germany with a tour!",
-                    price:1200,
+                    price:690,
                 },
                 {
-                    image: "/cities/paris.jpg",
+                    image: "/cities/denver.jpg",
                     title: "denver Tour",
                     subtitle:" Best Days ever in denver with the best tour of Europe!",
-                    price:1200,
+                    price:1170,
                 },
             ]
         }

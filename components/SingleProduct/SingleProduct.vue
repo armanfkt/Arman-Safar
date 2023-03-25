@@ -21,6 +21,11 @@
             <v-col cols="12" sm="4">
                 <h3>description: {{ city.description }}</h3>
             </v-col>
+            <v-col>
+                    <v-btn @click="navigatetoHomepage">
+                        Hompage
+                    </v-btn>
+                </v-col>
         </v-row>
     </v-container>
 
@@ -84,6 +89,11 @@
                 ]
             }
         },
+        methods:{
+    navigatetoHomepage(){
+     this.$router.push("/products-overview/")
+    }
+},
 
         computed:{
             city(){

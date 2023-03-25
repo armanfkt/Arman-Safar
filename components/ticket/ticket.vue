@@ -59,7 +59,7 @@
                     <div    >
                         <input class="date" type="date" v-model="departureDate">
                         <input class="date" type="date" v-model="returnDate" >
-                        <v-btn id="btn">reservation</v-btn>  
+                        <v-btn   @click="navigatetoHomepage" id="btn">reservation</v-btn>  
                             
                             
                             

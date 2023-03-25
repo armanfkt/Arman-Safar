@@ -3,15 +3,7 @@
         <v-col v-for ="tour in tours" :key="tour.title" cols="12" sm="6" md="3" xs="12">
             <product-card :image="tour.image" :title="tour.title"  :subtitle="tour.subtitle" :price="tour.price" />
             
-        </v-col>
-        <v-col  cols="12" sm="3">
-            <v-autocomplete 
-  clearable
-  label="Select your city"
-  :items="['Berlin', 'Rome', 'Barcelon', 'Paris', 'London', 'Milan', 'Munich', 'Denver']"
-></v-autocomplete>
-        </v-col>
-        
+        </v-col>       
 
     </v-row>
 

@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import ticket from '@/components/ticket/ticket'
+import Ticket from '@/components/Ticket/Ticket'
 export default{
     name:"index",
     components:{
-        ticket
+        Ticket
     }
 }
 </script>

@@ -1,58 +1,87 @@
 <template>
-    <v-container>
-<v-row>
-<v-col cols="12" sm="3">
+    <v-container id="container" >
+        <div class="col3">
 
-    <h2>Text Input</h2>
-    <input > {{ text }}
-</v-col>
-    
-    <h2>Checkbox</h2>
-    <input type="checkbox" id="checkbox" v-model="checked">
-  <label for="checkbox">Checked: {{ checked }}</label>
-  
-  
-  <h2>Multi Checkbox</h2>
-  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-  <label for="jack">Jack</label>
-  <input type="checkbox" id="john" value="John" v-model="checkedNames">
-  <label for="john">John</label>
-  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-  <label for="mike">Mike</label>
-  <p>Checked names: <pre>{{ checkedNames }}</pre></p>
-  
-  <h2>Radio</h2>
-  <input type="radio" id="one" value="One" v-model="picked">
-  <label for="one">One</label>
-  <br>
-  <input type="radio" id="two" value="Two" v-model="picked">
-  <label for="two">Two</label>
-  <br>
-  <span>Picked: {{ picked }}</span>
-  
-  <h2>Select</h2>
-  <select v-model="selected">
-    <option disabled value="">Please select one</option>
-    <option>A</option>
-    <option>B</option>
-    <option>C</option>
-</select>
-<span>Selected: {{ selected }}</span>
+            <v-row>
+                
+                <v-col cols="12" sm="6">
+                    
+                    <h2 >FirstName :</h2>
+                    <input class="input"> {{ text }}
+                </v-col>
+                <v-col cols="12" sm="6">
+                    
+                    <h2 >Last Name :</h2>
+                    <input class="input"> {{ text }}
+                </v-col>
+            </v-row>
+        </div>
+        <div class="col3">
 
-<h2>Multi Select</h2>
-  <select v-model="multiSelected" multiple style="width:100px">
-    <option>A</option>
-    <option>B</option>
-    <option>C</option>
-</select>
-  <span>Selected: {{ multiSelected }}</span> 
-</v-row>
+            <v-row>
+                
+                <v-col cols="12" sm="6">
+                    
+                    <h2 >NationalCode :</h2>
+                    <input class="input" type="number" :maxlength="10" value="0022040099"> {{ text }}
+                </v-col>
+                <v-col cols="12" sm="6">
+                    
+                    <h2 >BirthDay :</h2>
+                    <input class="input" type="date" > {{ text }}
+                </v-col>
+            </v-row>
+        </div>
+        <div>
+
+            <v-row>
+                
+                <v-col id="col3" cols="12" sm="12">
+                    <div>
+                        <v-autocomplete 
+      clearable
+      label="Select your city"
+      :items="['Berlin', 'Rome', 'Barcelon', 'Paris', 'London', 'Milan', 'Munich', 'Denver']"
+    ></v-autocomplete>
+                    </div>
+                    <div id="div5">
+
+                        
+                        <div id="div4" >
+                            <label id="lable" for="select">flightType :</label>
+                            <select  id="select" value="select"  v-model="flightType">
+                                
+                            <option value="One-way Flight" >One-way Flight</option>
+                            <option >Return Flight</option>
+                        </select>
+                    </div> 
+                    
+                    <div    >
+                        <input class="date" type="date" v-model="departureDate">
+                        <input class="date" type="date" v-model="returnDate" >
+                        <v-btn id="btn">reservation</v-btn>  
+                            
+                            
+                            
+                    </div>
+                    
+                </div>
+                </v-col>
+                <v-col>
+                    <v-btn @click="navigatetoHomepage">
+                        Hompage
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </div>
+        
 </v-container>
 </template>
 
 <script>
 export default{
-    name:"ticket",
+    name:"Ticket",
+    
     data() {
         return{
             ticket:[
@@ -65,8 +94,17 @@ export default{
 
         ]
     }
+},
+
+methods:{
+    navigatetoHomepage(){
+     this.$router.push("/products-overview/")
+    }
+},
 }
-}
+
+
+
 
 
 
